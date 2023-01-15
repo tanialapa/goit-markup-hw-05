@@ -115,6 +115,14 @@ ol {
 
 	color: var(--primary-text-color);
 	font-weight: 500;
+
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-list {
+	position: relative;
 }
 
 .site-nav .link:hover,
@@ -127,9 +135,26 @@ ol {
 }
 
 /*link*/
+.site-list::after {
+	content: " ";
+
+	position: absolute;
+
+	bottom: 0;
+	display: block;
+	width: 66px;
+	height: 4px;
+	border-radius: 2px;
+	background-color: #404bbf;
+}
+
 .link {
 	text-decoration: none;
 	color: var(--primary-text-color);
+
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -279,6 +304,10 @@ ol {
 	border-radius: 50%;
 	fill: var(--title-bg-color);
 	background: var(--accent-color);
+
+	transition-property: background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-button:hover,
 .team-button:focus {
@@ -310,10 +339,18 @@ ol {
 	width: 100%;
 	border: 1px solid #8e8f99;
 	border-radius: 4px;
+
+	transition-property: box-shadow, color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
 	fill: currentColor;
+
+	transition-property: fill;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -363,9 +400,18 @@ ol {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.buttons-effects {
+	transition-property: box-shadow, color, background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .button-secondary:hover,
 .button-secondary:focus {
 	background-color: var(--hover-bg-color);
+	transition-property: box-shadow, background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons-effects:hover,
@@ -411,7 +457,6 @@ ol {
 	padding-top: 32px;
 	padding-bottom: 16px;
 	border: 1px solid #e7e9fc;
-	border-top: none;
 }
 
 .card-heading {
@@ -422,13 +467,37 @@ ol {
 .card-text {
 	margin-top: 8px;
 }
+.card-thumb {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-thumb::before {
+	display: block;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #4d5ae5;
+	transform: translateY(100%);
+
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .portfolio-effects {
 	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	transition-property: border;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-effects:hover,
 .portfolio-effects:focus {
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.portfolio-effects:hover .card-thumb::before {
+	transform: translateY(0);
 }
 
 /*Footer*/
@@ -489,9 +558,75 @@ ol {
 	height: 100%;
 	border-radius: 50%;
 	fill: var(--title-bg-color);
-	background: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+
+	transition-property: background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-button:hover,
 .footer-button:focus {
-	background: #31d0aa;
+	background-color: #31d0aa;
+}
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(46, 47, 66, 0.4);
+
+	opacity: 1;
+	transform: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scale(0, 9);
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	min-width: 408px;
+	min-height: 576px;
+
+	background-color: #fcfcfc;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.button-close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	border: none;
+	outline: none;
+
+	width: 24px;
+	height: 24px;
+	background-color:#E7E9FC;
+	margin: 0;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+.button-close:hover,
+.button-close:focus {
+	fill: var(--one-bg-color);
+	background-color: var(--hover-bg-color);
 }

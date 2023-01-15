@@ -25,7 +25,7 @@
 				<nav class="main-nav">
 					<a href="/" class="logo"> <span class="logo-color">WEB</span>STUDIO </a>
 					<ul class="site-nav list">
-						<li class="item"><a href="" class="link">Studio</a></li>
+						<li class="item"><a href="" class="site-list link">Studio</a></li>
 						<li class="item"><a href="./portfolio.html" class="link">Portfolio</a></li>
 						<li class="item"><a href="" class="link">Contacts</a></li>
 					</ul>
@@ -45,7 +45,7 @@
 						for Your Business</h1
 					>
 
-					<button type="button" class="button-secondary"> Order services </button>
+					<button type="button" class="button-secondary" data-modal-open> Order services </button>
 				</div>
 			</section>
 
@@ -179,7 +179,7 @@
 											</svg>
 										</a>
 									</li>
-									<li  class="team-link-list">
+									<li class="team-link-list">
 										<a href="" class="team-button">
 											<svg class="team-icon" width="16" height="16">
 												<use href="./img/symbol-defs.svg#icon-linkedin"></use>
@@ -225,7 +225,6 @@
 									</li>
 								</ul>
 							</div>
-							
 						</li>
 						<li class="people">
 							<img src="./img/menwihtsmile.jpg" class="img" alt="men with smile" width="260" />
@@ -274,7 +273,6 @@
 
 					<ul class="customers-button-list">
 						<li class="customers-item">
-							
 							<a href="" class="customers-link">
 								<svg class="customers-icon" width="41" height="47">
 									<use href="./img/symbol-defs.svg#icon-group"></use>
@@ -370,5 +368,16 @@
 				</div>
 			</div>
 		</footer>
+
+		<div class="backdrop is-hidden" data-modal>
+			<div class="modal modal-close">
+				<button class="button-close" data-modal-close>
+					<svg width="8" height="8">
+						<use href="./img/symbol-defs.svg#icon-close-black"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<script src="./js/modal.js"></script>
 	</body>
 </html>
