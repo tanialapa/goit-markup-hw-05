@@ -333,7 +333,7 @@
 					</p>
 				</div>
 
-				<div class="footer-item">
+				<div>
 					<h3 class="footer-title">Social media</h3>
 					<ul class="footer-button-list">
 						<li class="footer-link-list">
@@ -366,6 +366,18 @@
 						</li>
 					</ul>
 				</div>
+				<div class="footer-subscribe">
+					<label class="footer-title"> Subscribe </label>
+					<div class="subscribe">
+						<input class="email" type="email" name="email" placeholder="E-mail" />
+						<button class="subscribe-button" type="submit">
+							Subscribe
+							<svg class="icon-send">
+								<use href="./img/symbol-defs.svg#icon-icon-send"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
 			</div>
 		</footer>
 
@@ -376,6 +388,53 @@
 						<use href="./img/symbol-defs.svg#icon-close-black"></use>
 					</svg>
 				</button>
+
+				<form class="form">
+					<h3 class="modal-title">Leave your contacts and we will call you back</h3>
+					<div class="form-field">
+						<label for="name" class="label">Name</label>
+						<div class="name-field-container">
+							<input class="input" type="text" name="name" id="name" />
+							<svg class="form-icon">
+								<use href="./img/symbol-defs.svg#icon-person-blackp"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="form-field">
+						<label for="tel" class="label">Phone</label>
+						<div class="name-field-container">
+							<input class="input" type="tel" name="tel" id="tel" />
+							<svg class="form-icon">
+								<use href="./img/symbol-defs.svg#icon-phone-black"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="form-field">
+						<label for="email" class="label">Email</label>
+						<div class="name-field-container">
+							<input class="input" type="email" name="email" id="email" />
+							<svg class="form-icon">
+								<use href="./img/symbol-defs.svg#icon-email-black"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="form-field">
+						<label class="label"> Comment </label>
+						<textarea name="feedback" rows="5" placeholder="Text input" class="border"></textarea>
+					</div>
+					<div class="form-checkbox">
+						<label class="label-checkbox">
+							<input class="checkbox" type="checkbox" name="checkbox" topic="" />
+							<span class="checkbox-icon"> </span>
+							<div class="checkbox-text">
+								I accept the terms and conditions of the <a href="/" class="privacy-policy">Privacy Policy </a>
+							</div>
+						</label>
+					</div>
+					<div class="form-field">
+						<button class="form-submit-button" type="submit">Send</button>
+					</div>
+				</form>
 			</div>
 		</div>
 		<script src="./js/modal.js"></script>
